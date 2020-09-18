@@ -1,0 +1,33 @@
+import React, {Fragment} from 'react';
+import CurrentRequest from './CurrentRequest/CurrentRequestScreen';
+import PastRequest from './PastRequest/PastRequestScreen';
+import {AppTopTabBar} from '../../Components/index';
+
+// we develop this library https://www.npmjs.com/package/rnfui
+import {Container} from 'rnfui';
+import {useTranslation} from 'react-i18next';
+
+function MyRequestScreen(props: any) {
+  const {t} = useTranslation();
+  return (
+    <Container>
+    //custom component for top tab navigation
+      <AppTopTabBar
+        tabArray={[
+          {
+            name: t('current'),
+            key: 0,
+            screen: <CurrentRequest {...props} />,
+          },
+          {
+            name: t('history'),
+            key: 1,
+            screen: <PastRequest {...props} />,
+          },
+        ]}
+      />
+    </Container>
+  );
+}
+
+export default MyRequestScreen;
