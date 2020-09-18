@@ -42,7 +42,7 @@ function useLoginScreen({navigation}: ScreenType) {
     navigation.navigate('Terms');
   };
   const openMail = () => {
-    Linking.openURL('mailto:info@smartciti-solutions.com?subject=GCS&body=Dear GCS Team,');
+    Linking.openURL('mailto:xyz@gmail.com?subject=Team&body=Dear Team,');
   };
 
   async function setToken() {
@@ -55,15 +55,14 @@ function useLoginScreen({navigation}: ScreenType) {
       if (fcmTokenString) {
         const fcmToken = fcmTokenString;
         DataStore.FcmToken = fcmTokenString;
-        console.log('FCM TOKEN--', fcmTokenString);
-        // Alert.alert('Token onLogin = ' + JSON.stringify(fcmTokenString));
+       
+    
       } 
     } catch (error) {
-      // Alert.alert('onLogin Error = ' + error);
+     
     }
   }
 
-  // const userDataString = await AsyncStorage.getItem('userData');
   const styles = useMemo(
     () =>
       StyleSheet.create({
